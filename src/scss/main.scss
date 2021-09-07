@@ -1,0 +1,383 @@
+@import './mixin.scss';
+@import './variable.scss';
+
+// *********  Navbar  **********
+.navbar-container {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    img {
+    width: 170px;
+    }
+    .nav-item a {
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+    }
+    .nav-item a.router-link-exact-active {
+    color: $green-theme;
+    }
+    .nav-item a:hover {
+    text-decoration: none;
+    color: $green-theme;
+    }
+    .counter {
+    position: relative;
+    bottom: 37px;
+    left: 14px;
+    }
+    .count {
+    background-color: $green-theme;
+    padding: 3px 7px 3px 7px;
+    border-radius: 90px;
+    display: inline;
+    position: relative;
+    top: -0.2rem;
+    @include font(8px , 800, white);
+    }
+    i{
+        color: black;
+    }
+    .dropdown{
+        margin: 0 !important;
+        height: 10px;
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: lightgray;
+            border-radius: 49px;
+        }   
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgb(182, 182, 182);
+        }
+        .dropdown-btn{
+            padding: 0;
+            background-color: transparent;
+            }
+            .dropdown-btn:focus,.dropdown-btn:active {
+                outline: none !important;
+                box-shadow: none;
+            }
+            .dropdown-menu{
+                margin-left: -18rem;
+                .items{
+                width: 300px !important;
+                height: 248px !important;
+                overflow-y: scroll;
+            }
+            p{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 200px;
+            }
+            .dropdown-item{
+                border-bottom: 1px solid lightgrey;
+                .moreProd {
+                    button {
+                        @include btn(15px, 6px);
+                    }
+                }
+            }
+            .bbtn-droopdown{
+                border-bottom: none !important;
+            }
+        }
+    }
+      
+}
+
+// *******   slider   ********
+.main-image-container {
+    background-image: url(../assets//sliderr.jpg);
+    width: 100%;
+    height: 100vh;
+    background-attachment: fixed;
+    background-size: cover;
+    .img-content {
+        position: absolute;
+        top: 57%;
+        left: 17%;
+        transform: translate((-50%, -50%));
+        p {
+            @include font(12px , 900, black);
+        }
+        h2 {
+            @include font(45px , 900,black);
+        }
+    }
+}
+  @media(max-width:900px){
+    .main-image-container .img-content {
+        left: 25%;
+    }
+}
+  @media(max-width:600px){
+    .main-image-container .img-content {
+        left: 30%;
+    }
+}
+  @media(max-width:400px){
+    .main-image-container .img-content {
+        left: 35%;
+    }
+}
+
+// *******   button   ********
+.button-container{
+    .btn{
+        @include btn(15px, 6px)
+    }
+}
+
+// *******   Heading   ********
+.heading-container {
+  text-align: center;
+    i{
+        position: relative;
+        top: -7px;
+    }
+    h2 {
+        @include font(25px , 900, black);
+        display: inline;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    h2 span {
+        @include font(47px , 800, black);
+        position: relative;
+        left: 3px;
+    }
+    h2 .o {
+        @include font(25px , 800, $green-theme);
+        position: relative;
+        left: 0px;
+    }    
+}
+@media(max-width:550px){
+    .heading-container{
+        i{
+            font-size: 11px;
+        }
+        h2{
+            font-size: 20px !important;
+        span {
+            font-size: 30px !important;
+        }
+        .o {
+            font-size: 20px !important;
+        }   
+        }
+    }
+}
+@media(max-width:400px){
+    .heading-container{
+        i{
+            font-size: 8px;
+        }
+        h2{
+            font-size: 15px !important;
+            span {
+                font-size: 30px !important;
+            }
+            .o {
+                font-size: 15px !important;
+            }   
+        }
+    }
+}
+
+// *******   shoe cards (menu items)   ********
+.menu-item-container{
+    .far{
+        margin: 2px;
+        @include font(12px , 0, $green-theme);
+    }
+    .name{
+        @include font(13px , 600, grey);
+    }
+    .price{
+        @include font(14px , 600, black);
+    }
+    .saleY {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        @include btn(13px, 15px);
+        }
+    .buttonContainer{
+        text-align: center !important;
+        margin-left: 0 auto;
+    }
+    button{
+      @include btn(15px, 6px);
+      @include btn-invisible(135px);
+    }
+    .btn2{
+      @include btn(15px, 6px);
+      @include btn-invisible(115px);
+    }
+    &:hover{
+        img{
+            opacity: 0.8;
+        }
+        button{
+            opacity: 0.85;
+            display: inline;
+            text-align: center !important;
+        }
+    }
+}
+
+// **** dropdown item *******
+.dropdown-item{
+    padding-bottom: 8px;
+    padding-top: 19px;
+    border-bottom: 1px solid lightgrey;
+    .image{
+        width: 32%;
+        margin: 0px !important;
+        display: inline-block;
+        img{
+            margin-top: -20px !important;
+            width: 60px;
+        }
+    }
+    .details{
+        width: 68%;
+        display: inline-block;
+        span{
+            display: block;
+        }
+        .name{
+            color: grey;
+            font-size: 13px;
+        }
+        .price{
+            font-size: 13px;
+            font-weight: 500;
+        }
+    }
+}
+
+// ********* checkout **********
+.check-out{
+    padding-bottom: 4rem !important;
+    .totalPrice {
+        float: right;
+        font-size: 15px;
+        color: grey;
+        span {
+            color: #31e0ba;
+            font-size: 20px;
+            font-weight: 700;
+          }
+      }
+      .row {
+        border-bottom: 1px solid #e6e6e6;
+        padding-bottom: 10px;
+        .image {
+            border: 5px solid #31e0ba;
+            margin-top: 10px;
+          }
+        .name {
+            font-size: 15px;
+            font-weight: 700;
+            color: grey;
+        }
+        .price {
+            font-size: 20px;
+            color: grey;
+            &::first-letter {
+                font-size: 23px;
+                font-weight: 900;
+                color: #31e0ba;
+            }
+        }
+        .btn{
+            border: none;
+            background-color: white;
+            &:focus{
+                outline: none !important;
+                box-shadow: none;
+            }
+        }
+        .removeItem {
+            background-color: #31e0ba;
+            padding: 6px;
+            padding-left: 25px;
+            padding-right: 25px;
+            border: none;
+            border-radius: 90px;
+            font-size: 16px;
+            color: #ededed;
+            letter-spacing: 1px;
+            &:focus{
+                outline: none;
+            }
+        }
+    }
+    p{
+        padding: 110px 0;
+        font-family: 'Dosis', sans-serif;
+        text-align: center !important;
+        font-size:20px;
+        color: grey !important;
+    }
+    .test-warning{
+        text-align: center;
+        margin-top: 40px;
+        font-size: 17px;
+        color: rgb(209, 113, 113);
+      }
+    .paynow-btn{
+        float: right;
+        background-color: black;
+        color: white;
+        padding: 6px;
+        padding-left: 14px;
+        padding-right: 14px;
+        border: none;
+        border-radius: 6px;
+        box-shadow: 1px 1px 2px black;
+        font-size: 13px;
+    }
+    .btn-right{
+        float: right !important;
+    }
+} 
+
+
+@media(max-width:500px){
+    .check-out{
+        .row{
+            .image {
+                width: 70px !important;
+                margin-top: 1.2rem;
+              }
+              .name {
+                font-size: 13.5px;
+            }
+            .price {
+                font-size: 17px;
+                color: grey;
+                &::first-letter {
+                    font-size: 20px;
+                    font-weight: 900;
+                    color: #31e0ba;
+                }
+            }
+            .btn{
+                font-size: 10px;
+            }
+            span{
+                font-size: 11px;
+            }
+        }
+    }
+}

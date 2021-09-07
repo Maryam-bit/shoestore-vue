@@ -1,0 +1,29 @@
+@mixin btn($fontSizeChange, $borderRadiusChange){
+    background-color: black;
+    color: white;
+    padding: 6px;
+    padding-left: 19px;
+    padding-right: 19px;
+    border: none;
+    border-radius: $borderRadiusChange;
+    box-shadow: 1px 1px 2px black;
+    font-size: $fontSizeChange;
+    &:hover{
+        color: lightgrey;
+    }
+}
+
+@mixin btn-invisible($positionBottomChange){
+    width: 50%;
+    opacity: 0.7;
+    position: absolute;
+    bottom:$positionBottomChange;
+    left: 25%;
+    display: none;
+}
+
+@mixin font($fontsizeChange, $fontWeightChange, $colorChange){
+    font-size: $fontsizeChange;
+    font-weight: $fontWeightChange;
+    color: $colorChange;
+}
